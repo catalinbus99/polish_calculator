@@ -156,7 +156,7 @@ return:
    
 main:
     mov ebp, esp; for correct debugging
-    ; NU MODIFICATI
+    
     push ebp
     mov ebp, esp
     
