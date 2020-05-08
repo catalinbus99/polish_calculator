@@ -8,7 +8,7 @@ section .data
     format: db "%d", 0
     
 section .bss
-    ; La aceasta adresa, scheletul stocheaza radacina arborelui
+    ; Store the root of the tree 
     root: resd 1
 
 section .text 
@@ -160,22 +160,22 @@ main:
     push ebp
     mov ebp, esp
     
-    ; Se citeste arborele si se scrie la adresa indicata mai sus
+    ; Read the tree and write it in memory at root address 
     call getAST
     mov [root], eax
     
-    ; Implementati rezolvarea aici:
-    ; Sorry, due to modularity reasons I can't do that 
-    ; using a funcion call is more elegant 
-    
+     ; call the solver 
+     
      push dword[root]  
      call polish 
-     
+    
+     ; print the result 
      push eax 
      push format 
      call printf  
-    ; NU MODIFICATI
-    ; Se elibereaza memoria alocata pentru arbore
+  
+  
+    ; free memory 
     push dword [root]
     call freeAST
     
