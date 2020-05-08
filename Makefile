@@ -1,13 +1,13 @@
 CFLAGS=-m32
 AFLAGS=-f elf
 
-build: tema1
+build: calculator
 
-tema1: tema1.o includes/ASTUtils.o includes/macro.o
+calculator: calculator.o includes/ASTUtils.o includes/macro.o
 	gcc $^ -o $@ $(CFLAGS)
 
-tema1.o: tema1.asm
+calculator.o: calculator.asm
 	nasm $^ -o $@ $(AFLAGS)
 
 clean:
-	rm -rf tema1.o tema1
+	rm -rf *.o calculator
