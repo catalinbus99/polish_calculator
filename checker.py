@@ -5,7 +5,7 @@ import shutil
 import os
 import sys
 
-runExec = "./tema1"
+runExec = "./calculator"
 useShell = True
 
 inputFileName = "input.inc"
@@ -13,7 +13,7 @@ inputFileName = "input.inc"
 numTests = 90
 numPassed = 0
 
-header = "======================= Tema 1 IOCLA ======================="
+header = "======================= Tests ======================="
 print("\n" + header + "\n")
 
 if not os.path.exists(runExec):
